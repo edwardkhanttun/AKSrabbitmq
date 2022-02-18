@@ -51,6 +51,7 @@ rabbitmq-management   NodePort    10.109.254.168   <none>        15672:31408/TCP
 rabbitmq-nodes        ClusterIP   None             <none>        4369/TCP,25672/TCP             10m
 ```
 Access the management UI @ 172.20.105.64:31408
+
 ![Alt text](./images/1-managementui-login.PNG?raw=true "Title")
 
 3. Access RabbitMQ Management UI (Ingress)
@@ -73,16 +74,22 @@ Admin > User > Create new user
 Username: order-app
 Password: PAssw0rd
 Tags: Management
+
 ![Alt text](./images/3-user-creation.PNG?raw=true "Title")
+
 3. Setup virtual host
 Admin > Virtual Hosts > Add a new virtual host
 Name: CPPS
+
 ![Alt text](./images/4-virtualhost.PNG?raw=true "Title")
  
 4. Give virtual host permission to users
 Click on the virtual host
+
 ![Alt text](./images/5-cpps-VH.PNG?raw=true "Title")
+
 Under Permissions > Set permission, select the user and give it permission to the current virtual host
+
 ![Alt text](./images/6-VH-permission.PNG?raw=true "Title")
  
 ### Connecting to RabbitMQ
