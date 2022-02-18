@@ -14,6 +14,7 @@ kubectl apply -f "https://github.com/rabbitmq/cluster-operator/releases/latest/d
 kubectl create ns rabbitmq
 kubectl apply -f rabbitmq.yaml -n rabbitmq
 ```
+
 ### Verify RabbitMQ is installed successfully
 ```
 kubectl get all -n rabbitmq
@@ -91,6 +92,7 @@ Under Permissions > Set permission, select the user and give it permission to th
 ### Connecting to RabbitMQ
 #### Connecting from within the same Kubernetes Cluster
 https://www.rabbitmq.com/dotnet-api-guide.html#connecting
+
 You can either connect through amqp
 ```
 ConnectionFactory factory = new ConnectionFactory();
