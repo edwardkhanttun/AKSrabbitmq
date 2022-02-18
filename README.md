@@ -15,6 +15,7 @@ kubectl create ns rabbitmq
 kubectl apply -f rabbitmq.yaml -n rabbitmq
 ```
 
+
 ### Verify RabbitMQ is installed successfully
 ```
 kubectl get all -n rabbitmq
@@ -32,6 +33,7 @@ statefulset.apps/rabbitmq-server   1/1     119s
 NAME                                    ALLREPLICASREADY   RECONCILESUCCESS   AGE
 rabbitmqcluster.rabbitmq.com/rabbitmq   True               True               119s
 ```
+
 
 ### Login into the RabbitMQ Management UI
 1. Obtain RabbitMQ Management login details
@@ -53,13 +55,14 @@ rabbitmq-management   NodePort    10.109.254.168   <none>        15672:31408/TCP
 rabbitmq-nodes        ClusterIP   None             <none>        4369/TCP,25672/TCP             10m
 ```
 Access the management UI @ 172.20.105.64:31408
-![Alt text](./images/1-managementui-login.png?raw=true "Title")
+![Alt text](./images/1-managementui-login.PNG?raw=true "Title")
 
 3. Access RabbitMQ Management UI (Ingress)
 ```
 kubectl apply -f rabbitmq-ingress.yaml -n rabbitmq
 ```
 Access the management UI @ 172.20.105.213/rabbitmq/
+
 
 ### RabbitMQ Configuration
 Access the management UI @ 172.20.105.64:31408 OR 172.20.105.213/rabbitmq/
@@ -89,6 +92,7 @@ Click on the virtual host
 Under Permissions > Set permission, select the user and give it permission to the current virtual host
 ![Alt text](./images/6-VH-permission.png?raw=true "Title")
 
+
 ### Connecting to RabbitMQ
 #### Connecting from within the same Kubernetes Cluster
 https://www.rabbitmq.com/dotnet-api-guide.html#connecting
@@ -111,6 +115,7 @@ factory.HostName = rabbitmq.rabbitmq;
 factory.Port = 5672;
 factory.VirtualHost = cpps;
 ```
+
 
 #### Connecting from outside Kubernetes Cluster
 This includes connectons from frontend angular services within kubernetes cluster
